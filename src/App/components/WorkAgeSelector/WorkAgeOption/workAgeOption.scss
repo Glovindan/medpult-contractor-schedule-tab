@@ -1,0 +1,29 @@
+.work-age-option {
+	width: fit-content;
+	padding: 7px 16px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid #bfbfc2;
+	border-radius: 20px;
+	cursor: pointer;
+	text-transform: capitalize;
+
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 130%;
+	letter-spacing: 0.0025em;
+	color: #2d2d2f;
+	flex: none;
+	order: 0;
+	flex-grow: 0;
+
+	&_selected {
+		color: white;
+		background-color: #45b0e5;
+		border-color: #45b0e5;
+	}
+}
