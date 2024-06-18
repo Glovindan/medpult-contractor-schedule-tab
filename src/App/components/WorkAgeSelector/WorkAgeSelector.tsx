@@ -32,7 +32,10 @@ function WorkAgeSelector({ }: PropsWithChildren<WorkAgeSelectorProps>) {
 	// Получение всех возможных вариантов
 	React.useLayoutEffect(() => { Scripts.getWorkAgeVariants().then(options => setPossibleOptions(options)) }, [])
 	// Отрисовка вариантов при изменении выбранного варианта
-	React.useLayoutEffect(() => { getVariants() }, [data.workAge, possibleOptions])
+	React.useLayoutEffect(() => {
+		if (!data.workAge) setValue("workAge", possibleOptions[0])
+		getVariants()
+	}, [data.workAge, possibleOptions])
 
 	/** factory обработчика нажатия на вариант */
 	const onClickOptionFactory = (code: string) => {

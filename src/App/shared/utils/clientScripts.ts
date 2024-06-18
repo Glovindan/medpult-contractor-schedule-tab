@@ -1,4 +1,11 @@
+import {
+	FetchData,
+	FetchItem,
+	ItemData,
+	ItemDataString,
+} from '../../../UIKit/CustomList/CustomListTypes'
 import { ObjectItem } from '../../../UIKit/Filters/FiltersTypes'
+import { ScheduleItem } from '../../components/Schedule/ScheduleTypes'
 
 /** Заглушка ожидания ответа сервера */
 function randomDelay() {
@@ -27,4 +34,68 @@ async function getWorkRiskVariants(): Promise<ObjectItem[]> {
 	]
 }
 
-export default { getWorkAgeVariants, getWorkRiskVariants }
+/** Получение режима работы */
+async function getSchedule({
+	workAge,
+	workRisk,
+}: {
+	workAge?: ObjectItem
+	workRisk?: ObjectItem
+}): Promise<FetchData<ScheduleItem>> {
+	if (!workAge || !workRisk)
+		return {
+			items: [],
+			hasMore: false,
+		}
+
+	await randomDelay()
+	const items: FetchItem<ScheduleItem>[] = [
+		{
+			id: 'test',
+			data: {
+				day: new ItemDataString('Понедельник'),
+				startTime: new ItemDataString('08:00:00'),
+				endTime: new ItemDataString('20:00:00'),
+				isClockround: new ItemDataString('Нет'),
+				isNotWorkink: new ItemDataString('Нет'),
+			},
+		},
+		{
+			id: 'test',
+			data: {
+				day: new ItemDataString('Понедельник'),
+				startTime: new ItemDataString('08:00:00'),
+				endTime: new ItemDataString('20:00:00'),
+				isClockround: new ItemDataString('Нет'),
+				isNotWorkink: new ItemDataString('Нет'),
+			},
+		},
+		{
+			id: 'test',
+			data: {
+				day: new ItemDataString('Понедельник'),
+				startTime: new ItemDataString('08:00:00'),
+				endTime: new ItemDataString('20:00:00'),
+				isClockround: new ItemDataString('Нет'),
+				isNotWorkink: new ItemDataString('Нет'),
+			},
+		},
+		{
+			id: 'test',
+			data: {
+				day: new ItemDataString('Понедельник'),
+				startTime: new ItemDataString('08:00:00'),
+				endTime: new ItemDataString('20:00:00'),
+				isClockround: new ItemDataString('Нет'),
+				isNotWorkink: new ItemDataString('Нет'),
+			},
+		},
+	]
+
+	return {
+		items: items,
+		hasMore: false,
+	}
+}
+
+export default { getWorkAgeVariants, getWorkRiskVariants, getSchedule }

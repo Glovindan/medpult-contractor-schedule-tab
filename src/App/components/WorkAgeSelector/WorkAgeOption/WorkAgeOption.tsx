@@ -7,7 +7,6 @@ interface WorkAgeOptionProps extends WorkAgeVariant {
 
 /** Компонент выбора возрастной группы */
 function WorkAgeOption({ value, code, selected, clickHandler }: WorkAgeOptionProps) {
-	console.log({ value, code, selected })
 	return (
 		<div onClick={clickHandler} className={`work-age-option ${selected ? 'work-age-option_selected' : ''}`}>
 			{value}

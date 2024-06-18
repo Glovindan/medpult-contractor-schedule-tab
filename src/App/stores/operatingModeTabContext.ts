@@ -8,8 +8,12 @@ export class OperatingModeTabData {
 	workRisk?: ObjectItem
 	/** Возрастная категория */
 	workAge?: ObjectItem
+	/** Возрастная категория */
+	searchHandler: () => void
 
-	constructor() {}
+	constructor() {
+		this.searchHandler = () => {}
+	}
 }
 
 export const operatingModeTabContext = initGlobalContext<OperatingModeTabData>(

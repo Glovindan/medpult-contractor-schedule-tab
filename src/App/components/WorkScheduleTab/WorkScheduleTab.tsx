@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { operatingModeTabContext } from '../../stores/operatingModeTabContext';
 import WorkAgeSelector from '../WorkAgeSelector/WorkAgeSelector';
 import WorkRiskSelector from '../WorkRiskSelector/WorkRiskSelector';
+import Schedule from '../Schedule/Schedule';
 
 interface OperatingModeTabProps {
 }
@@ -17,7 +18,7 @@ function WorkScheduleTab() {
 					<WorkAgeSelector />
 					<WorkRiskSelector />
 				</div>
-				<div className="work-schedule-tab__schedule">cc</div>
+				<Schedule />
 			</div>
 		</operatingModeTabContext.Provider >
 	)
