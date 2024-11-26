@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import CustomList from '../../../UIKit/CustomList/CustomList';
-import { FetchData, ItemData, ListColumnData, SortData } from '../../../UIKit/CustomList/CustomListTypes';
-import { SelectTaskData } from '../../shared/types';
-import utils from '../../shared/utils/utils';
+import { ListColumnData } from '../../../UIKit/CustomList/CustomListTypes';
 import { operatingModeTabContext } from '../../stores/operatingModeTabContext';
 import Scripts from '../../shared/utils/clientScripts';
 import { ScheduleItem } from './ScheduleTypes';
